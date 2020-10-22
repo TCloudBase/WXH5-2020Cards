@@ -3,7 +3,7 @@
 ## 步骤一：准备小程序及云开发环境
 1.选择已有的小程序或者新建小程序，获得小程序的appid
 
-2.将本项目下载后解压，使用小程序开发者工具(开发者版-最新版本）导入项目，如图所示。appid处填写上一步小程序的appid。
+2.将本项目下载后解压，使用小程序开发者工具([开发者版-最新版本1.03.2010212](https://developers.weixin.qq.com/miniprogram/dev/devtools/nightly.html)）导入项目，如图所示。appid处填写上一步小程序的appid。
 ![](readmeres/01.png)
 
 3.小程序开发者工具打开后文件目录如下：
