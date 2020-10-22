@@ -1,0 +1,98 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>快来领取你的创意祝福贺卡</title>
+  <script src="https://imgcache.qq.com/qcloud/tcbjs/1.3.5/tcb.js"></script>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script>
+    const cloudenvid = ''
+  </script>
+  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/cropper.min.css">
+</head>
+<body>
+  <div class="startload" id="S_load">
+    <div class="loadmode">
+      <div class="loadicon">
+        <div class="loader1"></div>
+      </div>
+      <div class="loadtips" id="Loadtips">0%</div>
+    </div>
+    <div class="logotips">本服务由腾讯云·云开发提供</div>
+  </div>
+  <div class="show_one unvisable" id="S_1">
+    <img class="topimg" id="Topimg" src="res/top.png"></img>
+  </div>
+  <div class="show_two unvisable" id="S_2">
+    <div class="show_main" id="S_Main">
+      <div class="show_main_2  unvisable" id="Main2">
+        <div class="personimgmodel unvisable" id="Personimg">
+          <img class="personimg" id="pimg" src="" />
+        </div>
+        <img src="css/mode.png" class="jinmode  unvisable" id="Jinmode">
+        <button class="mainbtn  unvisable" onclick="chooseimg()" id="chooseImg">制作贺卡</button>
+      </div>
+      <div class="show_main_3 unvisable" id="Main3">
+        <img src="css/mode.png" class="jinmode" id="Jinmode">
+        <button class="Audiobtn unvisable" id="playAudio" onclick="playAudio(this)"
+          style="color: #bd1515;">播放祝福语音</button>
+        <button class="Audiobtn" onclick="inAudio()" id="chooseAudio">录制祝福语音</button>
+        <div class="audiotips unvisable" id="audiotips">点击按钮即可停止录制</div>
+        <input class="namein unvisable" oninput="inName(this)" type="text" id="Namein" placeholder="写下你的名字"></input>
+      </div>
+      <div class="show_main_4 unvisable" id="Main4">
+      </div>
+    </div>
+    <div class="show_cent">
+      <div class="show_cent_2 unvisable" id="Cent2">
+        <button class="nextbtn unvisable" style="margin: auto;" id="confirmImg" onclick="doneeditimg()">确认</button>
+        <button class="kuangbtn unvisable" style="margin: auto;" id="kbtn" onclick="changekimg()">更换相框</button>
+      </div>
+      <div class="show_cent_5 unvisable" id="Cent5">
+        <button class="kuangbtn kuangbtn-color" style="margin: auto;" id="cbtn"
+          onclick="playAudio(this,true)">听听他送你的祝福语音</button>
+      </div>
+    </div>
+    <div class="show_foot">
+      <div class="foot_btns unvisable" id="S2btns">
+        <button class="foot_cancel_btn" id="S2btnc" disabled="disabled" onclick="chooseimg()">重新选图</button>
+        <button class="foot_confirm_btn" id="S2btnf" disabled="disabled" onclick="toAudio()">下一步</button>
+      </div>
+      <div class="foot_btns unvisable" id="S3btns">
+        <button class="foot_cancel_btn" id="S3btnc" onclick="returnimg()">返回选图</button>
+        <button class="foot_confirm_btn" id="S3btnf" disabled="disabled" onclick="done()">下一步</button>
+      </div>
+      <div class="footbao unvisable" id="S4btns">
+        <div class="hongtop" style="visibility: hidden;">
+          <div class="hongname" id="hongName"></div>
+          <div class="hongfu" id="hongFu">福</div>
+        </div>
+        <div class="hongtext"  style="visibility: hidden;" id="hongText">祝福贺卡正在路上</div>
+        <div class="hongmoneyt" style="visibility: hidden;" id="hongmtmode"><span id="hongmt">180</span><span class="hongmoneyt-s">元宝</span></div>
+        <img class="hongmoney" style="visibility: hidden;" id="hongm" src="css/hong.gif">
+        <div class="hongdes" id="hongDes" style="visibility: hidden;">已送出福气，立即获得此加成</div>
+        <div class="honglaqu" id="honglaqu" onclick="laqu()">查看贺卡</div>
+      </div>
+      <div class="logotips_2">本服务由腾讯云·云开发提供</div>
+      <div class="foot_btns unvisable" id="S5btns">
+        <button class="foot_cancel_btn" id="S5btnc" onclick="returnMade()">回去制作</button>
+        <button class="foot_confirm_btn" id="S5btnf" onclick="weixinShareTimeline()">分享传递祝福</button>
+      </div>
+      <div class="foot_btns unvisable" id="S6btns">
+        <button class="foot_cancel_btn" id="S6btnc" onclick="returnhong()">返回</button>
+        <button class="foot_confirm_btn" id="S6btnf" onclick="startnew()">我也制作</button>
+      </div>
+    </div>
+  </div>
+  <div class="unvisable" id="KImgModel"></div>
+  <canvas id="Pcanvas" style="display: none;"></canvas>
+  <div id="cover" onclick="hideguide()" class="unvisable" style="width: 1920px; height: 969px;"></div>
+  <div id="guide" onclick="hideguide()" class="unvisable" style="top: 5px;"><img src="css/guide.png"></div>
+  <button class="radio-control audioControl unvisable" id="bgmusic" onclick="playbg()"></button>
+  <audio style="display: none" hidden="" src="res/bg.mp3" loop="true" id="audioInstance"></audio>
+  <script src="js/cropper.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
